@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  starfighters-arcade:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: starfighters-arcade
+    restart: unless-stopped
+    networks:
+      - coolify
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=coolify"
+      - "traefik.http.routers.starfighters-arcade.rule=Host(`starfighters.advancedmarketing.co`)"
+      - "traefik.http.routers.starfighters-arcade.entrypoints=https"
+      - "traefik.http.routers.starfighters-arcade.tls=true"
+      - "traefik.http.routers.starfighters-arcade.tls.certresolver=letsencrypt"
+      - "traefik.http.services.starfighters-arcade.loadbalancer.server.port=3000"
+
+networks:
+  coolify:
+    external: true

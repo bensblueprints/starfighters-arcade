@@ -1,0 +1,46 @@
+export const site = {
+  name: "StarFighters Arcade",
+  legalName: "Rebellion Arcade Games, LLC",
+  tagline: "Mesa's Retro 80s All-Ages Arcade",
+  address: {
+    line1: "4840 East Jasmine Street",
+    city: "Mesa",
+    state: "Arizona",
+    zip: "85205",
+    country: "United States",
+  },
+  email: "starfightersarcade@gmail.com",
+  phones: [
+    { label: "Main", number: "+1 602-513-9532" },
+    { label: "Alt 1", number: "+1 480-262-7148" },
+    { label: "Alt 2", number: "+1 602-692-8681" },
+  ],
+  pinballEmail: "starfighterspinball@gmail.com",
+  pinballPhone: "+1 480-393-6209",
+  hours: [
+    { day: "Friday", time: "7:00 PM – 11:00 PM" },
+    { day: "Saturday", time: "7:00 PM – 11:00 PM" },
+    { day: "Sunday", time: "3:00 PM – 7:00 PM" },
+  ],
+  pricing: {
+    dayPass: "$14.00",
+    member: "$13.00 + tax",
+    monthly: "$38.00 + tax (up to 3 guests/month)",
+    party: "$275 + tax (2 hrs, up to 40 guests)",
+    extraHour: "$125 / additional hour",
+  },
+  socials: {
+    instagram: "https://www.instagram.com/starfightersarcade",
+    facebook: "https://www.facebook.com/starfightersarcade",
+  },
+  nav: [
+    { href: "/", label: "Home" },
+    { href: "/games", label: "Games" },
+    { href: "/pinball-tournaments", label: "Tournaments" },
+    { href: "/spf", label: "SPF" },
+    { href: "/private-parties", label: "Private Parties" },
+    { href: "/events", label: "Events" },
+    { href: "/visit", label: "Visit" },
+    { href: "/contact", label: "Contact" },
+  ],
+};
