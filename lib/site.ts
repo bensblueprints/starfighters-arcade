@@ -40,6 +40,7 @@ export const site = {
     { href: "/spf", label: "SPF" },
     { href: "/private-parties", label: "Private Parties" },
     { href: "/events", label: "Events" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/visit", label: "Visit" },
     { href: "/contact", label: "Contact" },
   ],

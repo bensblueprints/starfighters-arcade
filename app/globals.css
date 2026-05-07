@@ -9,6 +9,8 @@
 html, body {
   background: #07060f;
   color: #f4f1ff;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {

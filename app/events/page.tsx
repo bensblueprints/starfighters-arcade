@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Backdrop } from "@/components/Backdrop";
+import { PhotoGrid } from "@/components/PhotoGrid";
 import { Calendar, Music, Users, Sparkles } from "lucide-react";
+import { photos } from "@/lib/photos";
 
 export const metadata = {
   title: "Events — StarFighters Arcade",
@@ -67,9 +69,20 @@ export default function EventsPage() {
         <p className="font-pixel text-[10px] tracking-[0.3em] text-neon-magenta">◆ PREVIOUSLY ON STARFIGHTERS</p>
         <h2 className="mt-3 font-display font-black uppercase text-3xl sm:text-4xl text-ink">Past gatherings we hosted</h2>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {previousEvents.map((e) => (
-            <li key={e} className="card-neon rounded-lg px-5 py-4 text-sm text-ink-muted hover:text-neon-cyan transition">
-              {e}
+          {previousEvents.map((e, i) => (
+            <li key={e} className="card-neon rounded-xl overflow-hidden hover:border-neon-cyan/40 transition">
+              <div className="aspect-[4/3] relative">
+                <img
+                  src={photos.events[i % photos.events.length]}
+                  alt={e}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/30 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <p className="font-display font-bold text-ink text-lg">{e}</p>
+                </div>
+              </div>
             </li>
           ))}
         </ul>

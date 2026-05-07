@@ -74,7 +74,7 @@ export default function VisitPage() {
           <iframe
             title="StarFighters Arcade map"
             src={`https://www.google.com/maps?q=${encodeURIComponent(`${site.address.line1}, ${site.address.city}, ${site.address.state}`)}&output=embed`}
-            className="w-full h-[420px] border-0 grayscale-[20%] contrast-[1.05]"
+            className="block w-full h-[420px] border-0 max-w-full grayscale-[20%] contrast-[1.05]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

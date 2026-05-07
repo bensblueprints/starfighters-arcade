@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Backdrop } from "@/components/Backdrop";
+import { PhotoGrid } from "@/components/PhotoGrid";
 import { Trophy, Calendar, Pizza, Mail, Phone } from "lucide-react";
 import { tournamentSchedule } from "@/lib/games";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 
 export const metadata = {
   title: "Pinball Tournaments — StarFighters Arcade",
@@ -23,6 +25,10 @@ export default function TournamentsPage() {
             Every month. Adults and kids. IFPA-ranked. The largest selection of pinball in the valley — in play.
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <PhotoGrid photos={photos.tournaments.slice(0, 6)} alt="Pinball tournament night" cols={3} />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16 grid gap-6 lg:grid-cols-2">

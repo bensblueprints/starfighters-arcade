@@ -1,5 +1,7 @@
 import { Backdrop } from "@/components/Backdrop";
+import { PhotoGrid } from "@/components/PhotoGrid";
 import { arcadeGames, pinballMachines } from "@/lib/games";
+import { photos } from "@/lib/photos";
 import { Gamepad2, CircleDot } from "lucide-react";
 
 export const metadata = {
@@ -27,6 +29,10 @@ export default function GamesPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <PhotoGrid photos={photos.games.slice(0, 12)} alt="StarFighters cabinet" cols={4} />
+      </section>
+
       <GameSection
         title="Arcade Cabinets"
         kicker="Cabinets"
@@ -34,6 +40,10 @@ export default function GamesPage() {
         tone="cyan"
         games={arcadeGames}
       />
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <PhotoGrid photos={photos.games.slice(12, 24)} alt="StarFighters pinball" cols={4} />
+      </section>
+
       <GameSection
         title="Pinball Machines"
         kicker="Pinball"

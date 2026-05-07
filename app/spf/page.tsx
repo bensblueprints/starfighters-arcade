@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Backdrop } from "@/components/Backdrop";
+import { PhotoGrid } from "@/components/PhotoGrid";
 import { Trophy } from "lucide-react";
+import { photos } from "@/lib/photos";
 
 export const metadata = {
   title: "Starfighters Pinball Festival (SPF) — StarFighters Arcade",
@@ -34,6 +36,10 @@ export default function SPFPage() {
             and pure pinball mayhem.
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <PhotoGrid photos={photos.spf.slice(0, 6)} alt="Starfighters Pinball Festival" cols={3} />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">

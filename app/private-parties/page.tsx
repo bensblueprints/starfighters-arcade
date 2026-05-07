@@ -1,7 +1,9 @@
 import { Backdrop } from "@/components/Backdrop";
+import { PhotoGrid } from "@/components/PhotoGrid";
 import { Users, Clock, Pizza, Trophy, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import { PartyForm } from "@/components/PartyForm";
+import { photos } from "@/lib/photos";
 
 export const metadata = {
   title: "Private Parties — StarFighters Arcade",
@@ -25,6 +27,10 @@ export default function PartiesPage() {
             <strong className="text-ink"> $275 + tax</strong> for 2 hours of free play, up to <strong className="text-ink">40 guests</strong>.
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <PhotoGrid photos={photos.parties} alt="Private party at StarFighters" cols={3} />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">

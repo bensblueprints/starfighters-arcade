@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${pixel.variable} ${display.variable} ${body.variable}`}>
-      <body className="min-h-dvh font-body">
+      <body className="min-h-dvh font-body overflow-x-hidden">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[1000] focus:bg-neon-magenta focus:text-bg focus:px-3 focus:py-2 focus:font-pixel focus:text-xs">
           Skip to main content
         </a>

@@ -1,15 +1,26 @@
 import Link from "next/link";
 import { ArrowRight, Gamepad2, Trophy, PartyPopper, MapPin, Clock, Sparkles } from "lucide-react";
 import { Backdrop, HorizonGrid } from "@/components/Backdrop";
+import { PhotoGrid } from "@/components/PhotoGrid";
 import { site } from "@/lib/site";
 import { arcadeGames, pinballMachines } from "@/lib/games";
+import { photos } from "@/lib/photos";
 
 export default function HomePage() {
   return (
     <>
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
-        <Backdrop />
+        <div aria-hidden className="absolute inset-0">
+          <img
+            src={photos.home[0]}
+            alt=""
+            className="h-full w-full object-cover opacity-40"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/85 to-bg" />
+          <div className="absolute inset-0 bg-scanlines opacity-50 mix-blend-overlay" />
+        </div>
         <HorizonGrid />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 pt-20 pb-32 sm:pt-28 sm:pb-40">
           <div className="max-w-3xl">
@@ -78,7 +89,14 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative space-y-4">
+            <div className="grid grid-cols-2 gap-3">
+              {photos.home.slice(2, 6).map((src, i) => (
+                <div key={src} className="aspect-[4/3] relative overflow-hidden rounded-xl border border-white/10">
+                  <img src={src} alt={`Inside StarFighters Arcade ${i+1}`} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                </div>
+              ))}
+            </div>
             <div className="card-neon rounded-2xl p-6 sm:p-8">
               <ul className="space-y-5">
                 <Bullet icon={<Sparkles className="text-neon-magenta" />}
@@ -111,8 +129,11 @@ export default function HomePage() {
             </div>
             <Link href="/games" className="btn-neon amber">View Full Game List <ArrowRight size={16} /></Link>
           </div>
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {arcadeGames.slice(0, 16).map((g) => (
+          <div className="mt-10">
+            <PhotoGrid photos={photos.games.slice(0, 8)} alt="StarFighters Arcade cabinet" cols={4} />
+          </div>
+          <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {arcadeGames.slice(0, 12).map((g) => (
               <div key={g} className="card-neon rounded-lg px-4 py-3 text-sm font-medium text-ink-muted hover:text-neon-cyan hover:border-neon-cyan/40 transition">
                 {g}
               </div>
@@ -154,7 +175,10 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="relative isolate overflow-hidden border-t border-white/10">
-        <Backdrop />
+        <div aria-hidden className="absolute inset-0">
+          <img src={photos.home[6] || photos.home[0]} alt="" className="h-full w-full object-cover opacity-30" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/90 to-bg" />
+        </div>
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 py-24 text-center">
           <p className="font-pixel text-[10px] tracking-[0.3em] text-neon-amber">◆ READY PLAYER ONE ◆</p>
           <h2 className="mt-6 font-display font-black uppercase text-4xl sm:text-6xl text-ink">
